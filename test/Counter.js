@@ -2,14 +2,26 @@ const { expect } = require('chai');
 const { ethers } = require('hardhat');
 
 describe('Counter', () => {
+  let counter;
 
-  it('stores the count', async () => {
+  beforeEach(async () => {
     const Counter = await ethers.getContractFactory('Counter');
-    const counter = await Counter.deploy('My Counter', 1);
-    const count = await counter.count();
-
-    expect(count).to.equal(1)
-    // Fetch the count
-    // Check the count to make sure it's what we expect
+    counter = await Counter.deploy('My Counter', 1);
   })
+
+  describe('Deployment', () => {
+
+    it('sets the initial count', async () => {
+      const count = await counter.count();
+
+      expect(count).to.equal(1)
+    })
+
+    it('sets the initial name', async () => {
+      const name = await counter.name();
+
+      expect(name).to.equal('My Counter')
+    })
+  })
+
 })
