@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
-contract Counters {
+contract Counter {
     string public name;
     uint public count;
 
