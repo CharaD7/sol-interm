@@ -12,11 +12,11 @@ describe('Counter', () => {
   describe('Deployment', () => {
 
     it('sets the initial count', async () => {
-      expect(count = await counter.count()).to.equal(1)
+      expect(await counter.count()).to.equal(1)
     })
 
     it('sets the initial name', async () => {
-      expect(name = await counter.name()).to.equal('My Counter')
+      expect(await counter.name()).to.equal('My Counter')
     })
   })
 
