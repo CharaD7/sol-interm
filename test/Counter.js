@@ -57,6 +57,12 @@ describe('Counter', () => {
       expect(await counter.getName()).to.equal('My Counter');
     })
 
+    it('updates the name', async () => {
+      transaction = await counter.setName('New Name')
+      await transaction.wait()
+      expect(await counter.name()).to.equal('New Name');
+    })
+
   })
 
 })
