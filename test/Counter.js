@@ -49,6 +49,14 @@ describe('Counter', () => {
       await expect(counter.decrement()).to.be.reverted;
     })
 
+    it('reads the name from the "name" public variable', async () => {
+      expect(await counter.name()).to.equal('My Counter');
+    })
+
+    it('reads the count from the "getName()" public variable', async () => {
+      expect(await counter.getName()).to.equal('My Counter');
+    })
+
   })
 
 })
