@@ -24,6 +24,14 @@ describe('Counter', () => {
   describe('Counting', () => {
     let transaction;
 
+    it('reads the count from the "count" public variable', async () => {
+      expect(await counter.count()).to.equal(1);
+    })
+
+    it('reads the count from the "getCount()" function', async () => {
+      expect(await counter.getCount()).to.equal(1);
+    })
+
     it('increments the count', async () => {
       transaction = await counter.increment();
       await transaction.wait();
